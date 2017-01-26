@@ -2,10 +2,9 @@
 wd=$(pwd)
 
 # Restore
-cd $wd/Library/
-dotnet restore
-cd $wd/Web/
-dotnet restore
+dotnet restore $wd/Library/
+dotnet restore $wd/Web/
+dotnet restore $wd/Api/
 
 # Build
 dotnet build **/project.json

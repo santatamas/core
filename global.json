@@ -1,8 +1,10 @@
 {
     "projects":[
         "Web",
+        "Web.Tests",
         "Library",
         "Library.Tests",
-        "Api"
+        "Api",
+        "Api.Tests"
     ]
 }

@@ -8,5 +8,18 @@ dependencies:
     - docker run -v `pwd`:/sln --workdir /sln microsoft/aspnetcore-build sh build.sh
   override:
     # Build the docker images.
-    - docker build --rm=false -t core-container-web ./Web
-    - docker build --rm=false -t core-container-api ./Api
+    - docker build --rm=false -t tamassanta/core-container-web ./Web
+    - docker build --rm=false -t tamassanta/core-container-api ./Api
+
+test:
+  override:
+    # Use the build container to run our dotnet core tests
+    - docker run -v `pwd`:/sln --workdir /sln microsoft/aspnetcore-build sh test.sh
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push tamassanta/core-container-web
+      - docker push tamassanta/core-container-api
