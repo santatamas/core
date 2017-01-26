@@ -2,6 +2,9 @@
 wd=$(pwd)
 
 # Restore
+dotnet restore $wd/Library/
+dotnet restore $wd/Web/
+dotnet restore $wd/Api/
 dotnet restore $wd/Library.Tests/
 dotnet restore $wd/Web.Tests/
 dotnet restore $wd/Api.Tests/
