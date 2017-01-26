@@ -2,6 +2,10 @@ machine:
   services:
     - docker
 
+general:
+   artifacts:
+     - $CIRCLE_TEST_REPORTS
+
 dependencies:
   pre:
     # Build the dotnet core apps inside the aspnetcore-build container.
