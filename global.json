@@ -2,6 +2,7 @@
     "projects":[
         "Web",
         "Library",
+        "Library.Tests",
         "Api"
     ]
 }
