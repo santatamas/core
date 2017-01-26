@@ -9,6 +9,6 @@ dotnet restore $wd/Library.Tests/
 dotnet restore $wd/Web.Tests/
 dotnet restore $wd/Api.Tests/
 
-dotnet test $wd/Api.Tests/project.json
-dotnet test $wd/Library.Tests/project.json
-dotnet test $wd/Web.Tests/project.json
+dotnet test $wd/Api.Tests/project.json -xml $wd/report/api-tests.xml
+dotnet test $wd/Library.Tests/project.json -xml $wd/report/library-tests.xml
+dotnet test $wd/Web.Tests/project.json -xml $wd/report/web-tests.xml
